@@ -69,7 +69,7 @@ re.findall(r"/classifieds/cars/view/(\d+)", html)
 ## ▶️ Run the Script
 
 ```bash
-python tracker.py
+python cargr_tracker.py
 ```
 
 It will check for new ads every `CHECK_INTERVAL` seconds (default is 300 seconds = 5 minutes).
