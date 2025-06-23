@@ -40,7 +40,7 @@ Download the matching [ChromeDriver](https://sites.google.com/chromium.org/drive
 
 ## 🔧 Configuration
 
-Open `tracker.py` and edit these variables:
+Open `cargr_tracker.py` and edit these variables:
 
 ```python
 SEARCH_URL = "YOUR CAR.GR URL"
