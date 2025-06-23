@@ -6,10 +6,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 # === ΡΥΘΜΙΣΕΙΣ ===
-SEARCH_URL = "YOUR CAR.GR URL"
+SEARCH_URL = "https://www.car.gr/used-bikes/yamaha.html?category=15002&condition=used&from_suggester=1&make=13329&mileage-from=1500&mileage-to=20000&model=17518&offer_type=sale&pg=1&price-from=600&price-to=6000&registration-from=2021"
 CHECK_INTERVAL = 300  # Κάθε 5 λεπτά
-TELEGRAM_TOKEN = "YOUR TELEGRAM TOKEN"
-TELEGRAM_CHAT_ID = "YOUR CHAT ID"
+TELEGRAM_TOKEN = "8121062843:AAGLuEEntepMf81SafQdToKQErv2Gl-fSpE"
+TELEGRAM_CHAT_ID = "918412785"
 SEEN_FILE = "seen_ids.txt"
 
 # === ΑΝΑΓΝΩΣΗ/ΑΠΟΘΗΚΕΥΣΗ ID ===
@@ -54,7 +54,7 @@ def fetch_ads():
     return ids
 
 # === ΚΥΡΙΟ LOOP ===
-print("🔍 Παρακολούθηση νέων αγγελιών ξεκίνησε...")
+print("🔍 Παρακολούθηση νέων αγγελιών MT-07 ξεκίνησε...")
 seen_ids = load_seen_ids()
 
 while True:
@@ -63,8 +63,8 @@ while True:
         new_ids = current_ids - seen_ids
         if new_ids:
             for ad_id in new_ids:
-                ad_url = f"https://www.car.gr/classifieds/<CATEGORY_SLUG>/view/{ad_id}"
-                send_telegram_message(f"📌 Νέα αγγελία:\n{ad_url}")
+                ad_url = f"https://www.car.gr/classifieds/bikes/view/{ad_id}"
+                send_telegram_message(f"📌 Νέα αγγελία για MT-07:\n{ad_url}")
                 print(f"✅ Εστάλη: {ad_url}")
             seen_ids.update(new_ids)
             save_seen_ids(new_ids)
