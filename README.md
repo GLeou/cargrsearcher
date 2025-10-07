@@ -92,7 +92,6 @@ Use `Ctrl + C` in the terminal.
 ## ⚠️ Notes
 
 - Avoid scraping too frequently — stick to 60–300 seconds between checks
-- **Do not push your Telegram token to GitHub** — use a `.env` file or secret variables for deployment
 
 ---
 
